@@ -136,6 +136,13 @@
   align-items: center;
   border: none;
   border-radius: 50%;
+
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s linear; 
+  }
 }
 
 .tableItem {

@@ -68,6 +68,13 @@
     justify-content: center;
     align-items: center;
   }
+
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s linear; 
+  }
 }
 
 .row {

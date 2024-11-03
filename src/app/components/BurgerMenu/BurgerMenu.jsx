@@ -1,9 +1,10 @@
 "use client";
-import useBodyScrollLock from "@/app/hooks/useBodyScrollLock";
+import useBodyScrollLock from "../../hooks/useBodyScrollLock";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./BurgerMenu.module.css";
+
 export default function BurgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
   useBodyScrollLock(!isOpen);

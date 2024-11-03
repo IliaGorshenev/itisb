@@ -38,6 +38,12 @@
   position: absolute;
   left: 12px;
   top: 8px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s linear; 
+  }
 }
 
 .contacts {
@@ -110,6 +116,12 @@
 @media (max-width: 1300px) {
   .burgerButton {
     display: block;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 0.2s linear;
+    }
   }
 }
 
@@ -133,4 +145,11 @@
   justify-content: space-between;
   font-size: 30px;
   font-weight: 700;
+
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s linear; 
+  }
 }
