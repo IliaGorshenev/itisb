@@ -1,3 +1,4 @@
+"use client";
 import styles from "./Form.module.css";
 
 import emailjs from "emailjs-com";
@@ -17,9 +18,9 @@ const sendEmail = (e) => {
     );
 };
 
-export const Form = () => {
+export const Form = ({ type = "first" }) => {
   return (
-    <div className={styles.wrapper}>
+    <div id="feedback" className={`${styles.wrapper} ${styles[type]}`}>
       <div className={styles.formWrapper}>
         <h2 className={styles.headerTitle}>
           Оставьте заявку на техническую поддержку

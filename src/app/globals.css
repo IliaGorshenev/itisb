@@ -84,7 +84,7 @@ body {
 
 html {
   padding: 20px;
-
+  scroll-behavior: smooth;
   @media (max-width: 1300px) {
     padding: 0;
   }

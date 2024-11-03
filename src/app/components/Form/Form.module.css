@@ -13,7 +13,7 @@
   row-gap: 48px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-image: url("../../../../public/form-image.jpg");
+
   background-repeat: no-repeat;
   background-size: cover;
   @media (max-width: 1400px) {
@@ -29,6 +29,14 @@
   @media (max-width: 1020px) {
     padding-bottom: 94px;
   }
+}
+
+.first {
+  background-image: url("../../../../public/form-image.jpg");
+}
+
+.second {
+  background-image: url("../../../../public/form-back-sec.jpg");
 }
 
 .button {

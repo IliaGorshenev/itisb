@@ -1,21 +1,21 @@
 .wrapper {
   max-width: 1830px;
   width: 100%;
-  min-height: 1040px;
+  min-height: 500px;
   margin: 0 auto;
   padding: 20px 48px;
   padding-bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-image: url("../../../../public/about-image.jpg");
+  background-image: url("../../../../public/nested-header.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
 
   @media (max-width: 1300px) {
     background-position: cover;
-    min-height: 812px;
+    min-height: 340px;
     position: relative;
     overflow: hidden;
     border-radius: 0;
@@ -37,21 +37,24 @@
 
 .content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto 1fr;
+  justify-content: space-between;
+  justify-items: left;
   align-items: center;
   color: var(--white);
-
-  @media (max-width: 1300px) {
+  margin: auto 0;
+  @media (max-width: 1000px) {
     display: flex;
     flex-direction: column;
-    margin-bottom: 381px;
   }
 }
 
-.textWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.route {
+  margin-right: auto;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 }
 
 .shield {
@@ -75,12 +78,15 @@
 
 .title {
   font-family: Inter;
-  font-size: 48px;
+  font-size: 82px;
   font-weight: 400;
-  line-height: 77px;
+
   letter-spacing: -0.04em;
-  text-align: left;
+  text-align: center;
   margin-bottom: 36px;
+  @media (max-width: 1000px) {
+    font-size: 36px;
+  }
 }
 
 .text {
@@ -125,17 +131,9 @@
     height: 48px;
     display: flex;
     background-color: #01757c;
-    position: relative;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
-
-    & svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
   }
 }
 
@@ -179,44 +177,6 @@
   background-color: var(--green);
   border-radius: 80px;
   width: fit-content;
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.lenta-container {
-  overflow: hidden;
-  width: 100%;
-}
-
-.lenta {
-  display: flex;
-  white-space: nowrap;
-  gap: 55px;
-  animation: scroll-left 20s linear infinite;
-}
-
-.lenta span {
-  padding-right: 5px;
-  color: rgba(255, 255, 255, 0.2);
-  font-size: 100px;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-.lenta::after {
-  content: attr(data-text);
-  padding-left: 5px;
-  color: rgba(255, 255, 255, 0.2);
-  font-size: 100px;
-  font-weight: 500;
-  text-transform: uppercase;
 }
 
 @media (max-width: 1300px) {
