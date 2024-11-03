@@ -1,0 +1,117 @@
+@import "@fontsource/inter/index.css";
+@import "@fontsource/inter/100.css";
+@import "@fontsource/inter/200.css";
+@import "@fontsource/inter/300.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/inter/800.css";
+
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+:root {
+  --green: #01757c;
+  --white: #fff;
+  --orange-default: #ffb21a;
+  --green-default: #00c7a6;
+  --green-dark: #00856f;
+  --red-default: #e51728;
+  --purple-dark: #8113d8;
+  --purple-background: #f1e3fc;
+  --turquoise-dark: #068dc7;
+  --turquoise-background: #dcf1fa;
+  --gray-600: #8e9599;
+  --red-error: #da304780;
+  --blue-10: #f7fbff;
+  --blue-20: #e5f2ff;
+  --blue-40: #d9ecff;
+  --blue-50: #bfdaff;
+  --blue-60: #99b8ff;
+  --blue-70: #99b8ff;
+  --blue-80: #3f76fc;
+  --blue-90: #2561f4;
+  --blue-100: #1b58ee;
+  --blue-dark: #143a87;
+  --blue-105: #1953e0;
+  --night-10: #f5f7fc;
+  --night-20: #edf2fa;
+  --night-30: #e6ebf5;
+  --night-40: #dde3f0;
+  --night-50: #ced8eb;
+  --night-60: #afbddf;
+  --night-70: #8c9cc5;
+  --night-75: #6c7ead;
+  --night-85: #5a6d9d;
+  --night-90: #3f4e73;
+  --night-95: #182c52;
+  --night-100: #091836;
+  --black-5: #fafafa;
+  --black-10: #f7f8fa;
+  --black-20: #f2f4f7;
+  --black-30: #e6eaed;
+  --black-40: #dadfe5;
+  --black-50: #cad1d9;
+  --black-60: #9da8b2;
+  --black-70: #7d8791;
+  --black-75: #545e69;
+  --black-80: #2d3740;
+  --black-90: #0e1c29;
+  --black-100: #02050a;
+}
+
+html,
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
+html {
+  padding: 20px;
+
+  @media (max-width: 1300px) {
+    padding: 0;
+  }
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

@@ -1,0 +1,167 @@
+.wrapper {
+  max-width: 1830px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 20px;
+  row-gap: 28px;
+  @media (max-width: 1300px) {
+    min-height: 812px;
+    overflow: hidden;
+    border-radius: 0;
+    padding: 40px 20px;
+  }
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  margin-bottom: 44px;
+  align-items: center;
+  row-gap: 28px;
+  @media (max-width: 1300px) {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+}
+.headerLink {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  row-gap: 8px;
+}
+
+.headerTitle {
+  align-self: flex-start;
+  color: #01757c;
+  font-size: 20px;
+  letter-spacing: 4%;
+  opacity: 60%;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.headerText {
+  font-size: 48px;
+  letter-spacing: 6%;
+
+  & span {
+    color: #01757c;
+  }
+}
+
+.tableTitle {
+  color: #01757c;
+  font-weight: 500;
+}
+
+.tableText {
+  color: #0f1b2e;
+  font-size: 14px;
+  line-height: auto;
+  font-weight: 500;
+}
+
+.footerText {
+  font-size: 18px;
+  letter-spacing: 4%;
+  color: #8a969f;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  align-self: flex-start;
+}
+.mainContentWrapper {
+  display: grid;
+  column-gap: 29px;
+  grid-template-columns: 2fr 4fr;
+  align-items: center;
+
+  @media (max-width: 1300px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+}
+
+.tableWrapper {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  justify-content: space-between;
+  height: 100%;
+  row-gap: 80px;
+
+  @media (max-width: 1300px) {
+    align-self: auto;
+    row-gap: 38px;
+    width: 100%;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+
+  row-gap: 28px;
+
+  @media (max-width: 1300px) {
+    row-gap: 12px;
+  }
+}
+
+.button {
+  background-color: #01757c;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+}
+
+.tableItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 12px;
+  width: 100%;
+  padding: 20px 10%;
+  border-radius: 12px;
+  border-right: 1.5px solid #01757c;
+  border-left: 1.5px solid #01757c;
+  text-align: center;
+}
+
+.tableTitle {
+  text-transform: uppercase;
+}
+
+.row {
+  width: 100%;
+}
+
+.twoRows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 32px;
+}
