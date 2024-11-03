@@ -1,29 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./SolutionsSecondary.module.css";
 export const SolutionsSecondary = () => {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.header}>
-        <h2 className={styles.headerTitle}>{`{ РЕШЕНИЯ }`}</h2>
-        <p className={styles.headerText}>Текст про решения</p>
-        <Link className={styles.headerLink} href={"/solutions"}>
-          Подробнее{" "}
-          <svg
-            width="23"
-            height="22"
-            viewBox="0 0 23 22"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1.0684 21.2393L21.2394 1.0683M21.2394 1.0683H5.1026M21.2394 1.0683V17.2051"
-              stroke="#01757C"
-              stroke-width="2"
-            />
-          </svg>
-        </Link>
-      </div>
       <div className={styles.content}>
         <div className={styles.rowTwoColumns}>
           <div style={{ backgroundColor: "#EFFBFF" }} className={styles.item}>
@@ -96,7 +75,7 @@ export const SolutionsSecondary = () => {
               </div>
             </div>
           </div>
-          <div style={{ backgroundColor: "#E7F6F7" }} className={styles.item}>
+          <div style={{ backgroundColor: "#EFFBFF" }} className={styles.item}>
             <h3 style={{ color: "#0F1B2E" }} className={styles.itemTitle}>
               Роботизация поддержки клиентов и сотрудников
             </h3>
@@ -174,8 +153,8 @@ export const SolutionsSecondary = () => {
             </div>
           </div>
         </div>
-        <div className={styles.rowThreeColumns}>
-          <div style={{ backgroundColor: "#4D9FB1" }} className={styles.item}>
+        <div className={styles.rowTwoColumns}>
+          <div style={{ backgroundColor: "#EFFBFF" }} className={styles.item}>
             <h3 className={styles.itemTitle}>Видеоконференцсвязь (ВКС)</h3>
             <p className={styles.itemText}>
               Защищённое подключение WebRTC абонентов из внешней сети с
@@ -200,7 +179,7 @@ export const SolutionsSecondary = () => {
                 className={styles.itemImage}
                 width={255}
                 height={221}
-                src={"/solution-3.png"}
+                src={"/solution-6.png"}
               ></Image>
             </div>
             <div className={styles.tags}>
@@ -212,7 +191,7 @@ export const SolutionsSecondary = () => {
               </div>
             </div>
           </div>
-          <div style={{ backgroundColor: "#2F848A" }} className={styles.item}>
+          <div style={{ backgroundColor: "#EFFBFF" }} className={styles.item}>
             <h3 className={styles.itemTitle}>Система виртуализации</h3>
             <p className={styles.itemText}>
               Поддержка широкого спектра процессоров и интеграция с системой
@@ -243,7 +222,7 @@ export const SolutionsSecondary = () => {
                 className={styles.itemImage}
                 width={264}
                 height={264}
-                src={"/solution-4.png"}
+                src={"/solution-7.png"}
               ></Image>
             </div>
             <div className={styles.tags}>
@@ -252,7 +231,9 @@ export const SolutionsSecondary = () => {
               </div>
             </div>
           </div>
-          <div style={{ backgroundColor: "#164E5F" }} className={styles.item}>
+        </div>
+        <div className={styles.rowTwoColumns}>
+          <div style={{ backgroundColor: "#EFFBFF" }} className={styles.item}>
             <h3 className={styles.itemTitle}>
               Экосистема корпоративных коммуникаций
             </h3>
@@ -280,10 +261,10 @@ export const SolutionsSecondary = () => {
               </ul>
               <Image
                 className={styles.itemImage}
-                width={362}
-                style={{ right: "-70px", bottom: "-20px" }}
-                height={362}
-                src={"/solution-5.png"}
+                width={320}
+                style={{ right: "-10px", bottom: "0px" }}
+                height={266}
+                src={"/solution-8.png"}
               ></Image>
             </div>
             <div className={styles.tags}>

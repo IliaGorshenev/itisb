@@ -168,7 +168,7 @@ export const Header = ({ title, route }) => {
         <div className={styles.content}>
           <p className={styles.route}>
             <span className={styles.main}>
-              <Link href={"/"}>Главная</Link>/ {route}
+              <Link href={"/"}>Главная  </Link>/  {route}
             </span>
           </p>
           <h1 className={styles.title}>{title}</h1>
