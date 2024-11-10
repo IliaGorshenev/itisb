@@ -1,11 +1,11 @@
 "use client";
-import useBodyScrollLock from "../../hooks/useBodyScrollLock";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import useBodyScrollLock from "../../hooks/useBodyScrollLock";
 import styles from "./BurgerMenu.module.css";
 
-export default function BurgerMenu() {
+export default function BurgerMenu({ type = "transperent" }) {
   const [isOpen, setIsOpen] = useState(false);
   useBodyScrollLock(!isOpen);
   const handleMenuToggle = () => {
@@ -29,7 +29,10 @@ export default function BurgerMenu() {
   }, []);
   return (
     <>
-      <div className={styles.burgerButton} onClick={handleMenuToggle}>
+      <div
+        className={`${styles.burgerButton} ${styles[type]}`}
+        onClick={handleMenuToggle}
+      >
         {" "}
         <motion.div
           className={styles.burgerBar}

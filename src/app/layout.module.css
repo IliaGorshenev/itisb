@@ -2,11 +2,21 @@
   display: flex;
   flex-direction: column;
   flex-grow: 10;
+  background-color: #f8fafc;
 }
 
 .main {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  grid-row-start: 2;
+}
+
+.whiteBackground {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 10;
+  background-color: #ffffff;
   justify-content: flex-start;
   grid-row-start: 2;
 }
@@ -51,8 +61,6 @@
     display: flex;
     flex-direction: column;
     width: 60%;
-   
-
   }
 
   @media (max-width: 750px) {
@@ -83,7 +91,6 @@
     margin-bottom: 48px;
     row-gap: 20px;
   }
-
 }
 
 .contactsItems {
@@ -92,9 +99,8 @@
   column-gap: 14px;
   row-gap: 40px;
 
-
   @media (max-width: 1300px) {
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -165,7 +171,7 @@
 
   &:hover {
     opacity: 0.8;
-    transition: opacity 0.2s linear; 
+    transition: opacity 0.2s linear;
   }
 }
 

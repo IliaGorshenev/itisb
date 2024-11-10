@@ -1,12 +1,20 @@
 // src/app/layout.js
+"use client";
 import Link from "next/link";
+import { useParams, usePathname } from "next/navigation";
 import "./globals.css";
+
 import styles from "./layout.module.css";
-export default function RootLayout({ children }) {
+const RootLayout = ({ children }) => {
+  const { id } = useParams();
+  const pathname = usePathname();
+  const isNewsWithId = pathname.startsWith("/news") && id;
   return (
     <html lang="en">
-      <body className={styles.main}>
-        <main className={styles.main}>{children}</main>
+      <body className={isNewsWithId ? styles.whiteBackground : styles.main}>
+        <main className={isNewsWithId ? styles.whiteBackground : styles.main}>
+          {children}
+        </main>
         <footer className={styles.footer}>
           <div className={styles.topRow}>
             <svg
@@ -187,7 +195,10 @@ export default function RootLayout({ children }) {
             </div>
           </div>
           <div className={styles["lenta-container"]}>
-            <div className={styles.lenta} data-text="Pro IT solutions and security systems">
+            <div
+              className={styles.lenta}
+              data-text="Pro IT solutions and security systems"
+            >
               <span>Pro IT solutions and security systems</span>
               <span>Pro IT solutions and security systems</span>
               <span>Pro IT solutions and security systems</span>
@@ -208,4 +219,6 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

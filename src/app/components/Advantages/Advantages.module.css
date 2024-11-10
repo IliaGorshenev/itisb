@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #fff;
+  background-color: #f8fafc;
   border-radius: 20px;
   background-image: url("../../../../public/advantages-back.jpg");
   background-repeat: no-repeat;

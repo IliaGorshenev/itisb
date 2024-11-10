@@ -18,6 +18,14 @@
   cursor: pointer;
 }
 
+.transperent {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ordinary {
+  background-color: #01757c;
+}
+
 .burgerBar {
   width: 100%;
   height: 2px;
@@ -42,7 +50,7 @@
 
   &:hover {
     opacity: 0.8;
-    transition: opacity 0.2s linear; 
+    transition: opacity 0.2s linear;
   }
 }
 
@@ -150,6 +158,6 @@
 
   &:hover {
     opacity: 0.8;
-    transition: opacity 0.2s linear; 
+    transition: opacity 0.2s linear;
   }
 }
