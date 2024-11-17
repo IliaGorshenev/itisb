@@ -21,7 +21,7 @@ export default function ArticlePage() {
     document.getElementById("feedback").scrollIntoView({ behavior: "smooth" });
   };
   const [sorted, setSorted] = useState([...articles]);
-  
+
   useEffect(() => {
     if (id) {
       const foundArticle = articles.find(
@@ -37,9 +37,6 @@ export default function ArticlePage() {
     }
   }, [article]);
 
-  if (!article) {
-    return <p>Article not found.</p>;
-  }
   return (
     <>
       <div className={styles.commonWrapper}>
