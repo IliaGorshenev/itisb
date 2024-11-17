@@ -5,6 +5,7 @@ import { Form } from "./components/Form/Form";
 import { Info } from "./components/Info/Info";
 import { Partners } from "./components/Partners/Partners";
 import { Solutions } from "./components/Solutions/Solutions";
+import { NewsBlock } from "./components/NewsBlock/NewsBlock";
 export default function Home() {
   return (
     <>
@@ -13,6 +14,7 @@ export default function Home() {
       <Advantages />
       <Partners />
       <Solutions />
+      <NewsBlock />
       <Form />
     </>
   );

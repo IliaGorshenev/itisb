@@ -22,7 +22,7 @@ export default function ArticlePage() {
   const [sorted, setSorted] = useState([...articles]);
   useEffect(() => {
     setSorted([...articles.filter((a) => a.id !== article.id)]);
-  }, [articles]);
+  }, [id]);
   const { id } = useParams();
   const article = articles.find((a) => a.id === parseInt(id));
 
@@ -204,9 +204,9 @@ export default function ArticlePage() {
           <div className={styles.articleBlock}>
             <Image
               className={styles.image}
-              width={1784}
-              height={450}
-              src="/news-photo.jpg"
+              width={article.width}
+              height={article.height}
+              src={article.firstImage}
             ></Image>
           </div>
           <div className={styles.articleContent}>

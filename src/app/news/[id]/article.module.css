@@ -91,12 +91,12 @@
 }
 
 .articleBlock {
-  position: relative;
   padding: 30px 20px;
-
+  height: 546px;
+  overflow: hidden;
   & .image {
     width: 100%;
-    object-position: center;
+    object-position: center -300px;
     object-fit: cover;
   }
 }
@@ -117,6 +117,8 @@
 .articleContent {
   display: grid;
   grid-template-columns: 1fr 3fr;
+
+  
 }
 .route {
   margin-right: auto;
@@ -251,6 +253,7 @@
   & > img {
     border-radius: 12px;
     width: 100%;
+    margin: 10px 0;
   }
 }
 

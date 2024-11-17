@@ -64,8 +64,8 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 
-  color: black; /* Change to your preferred color */
-  background-color: white; /* Change to your preferred background color */
+  color: black;
+  background-color: white;
 }
 
 .no-scroll {
