@@ -29,6 +29,10 @@
   color: #8a969f;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @media (max-width: 520px) {
+    font-size: 14px;
+  }
 }
 
 .date {
@@ -41,8 +45,12 @@
   position: relative;
   width: 100%;
 
-  grid-template-columns: repeat(auto-fill, minmax(453px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
   gap: 32px;
+  @media (max-width: 520px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  }
 }
 
 .articleWrapper {
@@ -59,14 +67,19 @@
   margin-bottom: 10px;
   font-size: 28px;
   font-weight: 500;
+
+  @media (max-width: 520px) {
+    font-size: 20px;
+  }
 }
 
 .tags {
   display: flex;
   flex-direction: row;
-  column-gap: 8px;
+  gap: 8px;
   z-index: 12;
   margin-top: auto;
+  flex-wrap: wrap;
 }
 
 .tag {

@@ -20,6 +20,10 @@
     overflow: hidden;
     border-radius: 0;
   }
+
+  @media (max-width: 1300px) {
+    padding: 12px 13px;
+  }
 }
 
 /* src/components/About.module.css */

@@ -49,12 +49,23 @@
   & span {
     color: #01757c;
   }
+
+  @media (ma-width: 520px) {
+    font-size: 30px;
+    letter-spacing: -6%;
+  }
 }
 
 .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media (max-width: 520px) {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
 }
 .content {
   display: flex;
@@ -121,6 +132,10 @@
   column-gap: 8px;
   z-index: 12;
   margin-top: auto;
+
+  @media (max-width: 520px) {
+    margin-top: 42px;
+  }
 }
 
 .tag {

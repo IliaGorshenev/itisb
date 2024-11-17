@@ -53,6 +53,10 @@
   & span {
     color: #01757c;
   }
+
+  @media (max-width: 520px) {
+    font-size: 24px;
+  }
 }
 
 .tableTitle {

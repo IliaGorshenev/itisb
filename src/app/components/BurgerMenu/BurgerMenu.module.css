@@ -1,17 +1,18 @@
 /* src/components/BurgerMenu.module.css */
 .burgerButton {
-  position: fixed;
+  position: static;
   width: 48px;
   height: 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  justify-items: center;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   padding: 8px;
   box-sizing: border-box;
-  padding-top: 12px;
+  padding-top: 13px;
   right: 12px;
   top: 8px;
   z-index: 1000;

@@ -56,6 +56,9 @@
   column-gap: 24px;
   & > svg {
     margin-right: auto;
+    @media (max-width: 1300px) {
+      margin-bottom: 44px;
+    }
   }
   @media (max-width: 1300px) {
     display: flex;
@@ -101,6 +104,9 @@
 
   @media (max-width: 1300px) {
     grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -160,7 +166,7 @@
   & > li {
     min-width: 215px;
     @media (max-width: 1300px) {
-      min-width: none;
+      min-width: auto;
     }
   }
 }

@@ -57,15 +57,16 @@ export const InfoThird = () => {
           <div className={styles.buttonWrapper}></div>
         </div>
 
-        <iframe
-          src="https://yandex.ru/map-widget/v1/-/CDhTjGOI"
-          width="100%"
-          height={"100%"}
-          style={{ border: "0", aspectRatio: "3 / 2" }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
+        <div className={styles.iframe}>
+          <iframe
+            src="https://yandex.ru/map-widget/v1/-/CDhTjGOI"
+            width="100%"
+            height={"100%"}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
       </div>
     </div>
   );

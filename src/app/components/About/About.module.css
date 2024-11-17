@@ -20,26 +20,23 @@
     overflow: hidden;
     border-radius: 0;
   }
+  @media (max-width: 520px) {
+    padding: 12px 13px;
+  }
 }
 
-/* src/components/About.module.css */
 .logo {
-  z-index: 1; /* Default z-index */
+  z-index: 1;
   cursor: pointer;
+
+  width: 122px;
+  height: 38px;
 
   &:hover {
     opacity: 0.8;
-    transition: opacity 0.2s linear; 
+    transition: opacity 0.2s linear;
   }
 }
-/* 
-@media (max-width: 1300px) {
-  .logo {
-    z-index: 10000; 
-  }
-} */
-
-/* src/components/Header.module.css */
 
 .content {
   display: grid;
@@ -51,6 +48,9 @@
     display: flex;
     flex-direction: column;
     margin: auto 0;
+  }
+  @media (max-width: 520px) {
+    margin-top: 165px;
   }
 }
 
@@ -77,6 +77,10 @@
     width: 708px;
     height: 708px;
   }
+  @media (max-width: 1000px) {
+    right: -180px;
+    bottom: -210px;
+  }
 }
 
 .title {
@@ -87,6 +91,10 @@
   letter-spacing: -0.04em;
   text-align: left;
   margin-bottom: 36px;
+
+  @media (max-width: 520px) {
+    margin-bottom: 20px;
+  }
 }
 
 .text {
@@ -94,9 +102,14 @@
   font-size: 24px;
   font-weight: 400;
   line-height: 31.2px;
-  letter-spacing: -0.04em;
+  letter-spacing: -4%;
   text-align: left;
   margin-bottom: 48px;
+
+  @media (max-width: 520px) {
+    font-size: 14px;
+    line-height: 130%;
+  }
 }
 
 .buttonWrapper {
@@ -104,6 +117,10 @@
   justify-content: flex-start;
   align-items: center;
   gap: 16px;
+
+  @media (max-width: 520px) {
+    width: 100%;
+  }
 }
 
 .buttonSecondary {
@@ -116,7 +133,7 @@
 
   &:hover {
     opacity: 0.8;
-    transition: opacity 0.2s linear; 
+    transition: opacity 0.2s linear;
   }
 
   flex-direction: row;
@@ -132,6 +149,10 @@
     color: #0f1b2e;
     letter-spacing: 4%;
     text-transform: uppercase;
+
+    @media (max-width: 520px) {
+      font-size: 14px;
+    }
   }
   & .circle {
     width: 48px;
@@ -183,7 +204,7 @@
 
   &:hover {
     opacity: 0.8;
-    transition: opacity 0.3s linear; 
+    transition: opacity 0.3s linear;
   }
 }
 

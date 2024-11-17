@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.1.0",
+    "@react-email/render": "^1.0.2",
     "@types/dompurify": "^3.0.5",
     "classnames": "^2.5.1",
     "dompurify": "^3.1.7",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^11.11.11",
+    "jotai": "^2.10.2",
     "next": "15.0.1",
+    "nodemailer": "^6.9.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "swiper": "^11.1.14"

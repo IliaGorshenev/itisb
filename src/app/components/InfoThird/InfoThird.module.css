@@ -85,6 +85,20 @@
   grid-template-columns: 2fr 4fr;
   align-items: center;
 
+  & .iframe {
+    height: 100%;
+    width: 100%;
+
+    @media (max-width: 1300px) {
+      height: 656px;
+      width: 100%;
+      /* aspect-ratio: '2 / 8'; */
+    }
+  }
+  & iframe {
+    border: 0;
+    /* aspect-ratio: '3 / 2'; */
+  }
   @media (max-width: 1300px) {
     display: flex;
     flex-direction: column;
@@ -141,7 +155,7 @@
 
   &:hover {
     opacity: 0.8;
-    transition: opacity 0.2s linear; 
+    transition: opacity 0.2s linear;
   }
 }
 
