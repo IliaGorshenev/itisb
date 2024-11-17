@@ -20,10 +20,10 @@ export default function ArticlePage() {
   };
   const [sorted, setSorted] = useState([...articles]);
   useEffect(() => {
-    setSorted([...articles.filter((a) => a.id !== article.id)]);
+    id && setSorted([...articles.filter((a) => a.id !== article.id)]);
   }, [id, article]);
   const { id } = useParams();
-  const article = articles.find((a) => a.id === parseInt(id));
+  const article = id && articles.find((a) => a.id === parseInt(id));
 
   if (!article) {
     return <p>Article not found.</p>;
@@ -370,7 +370,7 @@ export default function ArticlePage() {
                 }}
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
               >
-                {sorted.map((newsArticle, index) => (
+                {sorted && sorted.map((newsArticle, index) => (
                   <SwiperSlide key={newsArticle.id}>
                     <Link href={`/news/${article.id}`}>
                       <div key={index} className={styles.sliderCard}>
