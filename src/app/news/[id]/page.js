@@ -207,17 +207,17 @@ export default function ArticlePage() {
             <span className={styles.main}>
               <Link href={"/"}>Главная </Link>/{" "}
               <Link href={"/news"}>Новости </Link> /{" "}
-              <span className={styles.breadcrumbs}>{article.title}</span>
+              <span className={styles.breadcrumbs}>{article?.title}</span>
             </span>
           </p>
 
-          <h1 className={styles.articleTitle}>{article.title}</h1>
+          <h1 className={styles.articleTitle}>{article?.title}</h1>
           <div className={styles.articleBlock}>
             <Image
               className={styles.image}
-              width={article.width}
-              height={article.height}
-              src={article.firstImage}
+              width={article?.width}
+              height={article?.height}
+              src={article?.firstImage}
             ></Image>
           </div>
           <div className={styles.articleContent}>
