@@ -37,6 +37,9 @@ export default function ArticlePage() {
     }
   }, [article]);
 
+  if (!article) {
+    return <p> </p>;
+  }
   return (
     <>
       <div className={styles.commonWrapper}>
