@@ -13,7 +13,7 @@ import { articles } from "../const";
 import styles from "./article.module.css";
 export default function ArticlePage() {
   SwiperCore.use([Navigation, Autoplay]);
-
+  const [article, setArticle] = useState(null);
   // const { query } = useRouter();
   const { id } = useParams();
 
@@ -21,10 +21,21 @@ export default function ArticlePage() {
     document.getElementById("feedback").scrollIntoView({ behavior: "smooth" });
   };
   const [sorted, setSorted] = useState([...articles]);
+  
   useEffect(() => {
-    id && setSorted([...articles.filter((a) => a.id !== article.id)]);
-  }, [id, article]);
-  const article = id && articles.find((a) => a.id === parseInt(id));
+    if (id) {
+      const foundArticle = articles.find(
+        (article) => article.id.toString() === id
+      );
+      setArticle(foundArticle);
+    }
+  }, [id]);
+
+  useEffect(() => {
+    if (article) {
+      setSorted([...articles.filter((a) => a.id !== article.id)]);
+    }
+  }, [article]);
 
   if (!article) {
     return <p>Article not found.</p>;
@@ -289,7 +300,7 @@ export default function ArticlePage() {
                 </defs>
               </svg>
             </div>
-            {article.content && (
+            {article?.content && (
               <div
                 className={styles.articleText}
                 dangerouslySetInnerHTML={{
@@ -374,17 +385,19 @@ export default function ArticlePage() {
                 {sorted &&
                   sorted.map((newsArticle, index) => (
                     <SwiperSlide key={newsArticle.id}>
-                      <Link href={`/news/${article.id}`}>
+                      <Link href={`/news/${newsArticle.id}`}>
                         <div key={index} className={styles.sliderCard}>
                           <span className={styles.dateItem}>
-                            {article.date}
+                            {newsArticle.date}
                           </span>
-                          <h2 className={styles.titleItem}>{article.title}</h2>
+                          <h2 className={styles.titleItem}>
+                            {newsArticle.title}
+                          </h2>
                           <p className={styles.contentItem}>
-                            {article.content}
+                            {newsArticle.content}
                           </p>
                           <div className={styles.tagsItem}>
-                            {article.tags.map((tag, index) => (
+                            {newsArticle.tags.map((tag, index) => (
                               <div key={index} className={styles.tagItem}>
                                 <span className={styles.tagTextItem}>
                                   {tag}
