@@ -11,9 +11,11 @@ import "swiper/swiper-bundle.css";
 import BurgerMenu from "../../components/BurgerMenu/BurgerMenu";
 import { articles } from "../const";
 import styles from "./article.module.css";
-
 export default function ArticlePage() {
   SwiperCore.use([Navigation, Autoplay]);
+
+  // const { query } = useRouter();
+  const { id } = useParams();
 
   const handleClick = () => {
     document.getElementById("feedback").scrollIntoView({ behavior: "smooth" });
@@ -22,7 +24,6 @@ export default function ArticlePage() {
   useEffect(() => {
     id && setSorted([...articles.filter((a) => a.id !== article.id)]);
   }, [id, article]);
-  const { id } = useParams();
   const article = id && articles.find((a) => a.id === parseInt(id));
 
   if (!article) {
@@ -370,24 +371,31 @@ export default function ArticlePage() {
                 }}
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
               >
-                {sorted && sorted.map((newsArticle, index) => (
-                  <SwiperSlide key={newsArticle.id}>
-                    <Link href={`/news/${article.id}`}>
-                      <div key={index} className={styles.sliderCard}>
-                        <span className={styles.dateItem}>{article.date}</span>
-                        <h2 className={styles.titleItem}>{article.title}</h2>
-                        <p className={styles.contentItem}>{article.content}</p>
-                        <div className={styles.tagsItem}>
-                          {article.tags.map((tag, index) => (
-                            <div key={index} className={styles.tagItem}>
-                              <span className={styles.tagTextItem}>{tag}</span>
-                            </div>
-                          ))}
+                {sorted &&
+                  sorted.map((newsArticle, index) => (
+                    <SwiperSlide key={newsArticle.id}>
+                      <Link href={`/news/${article.id}`}>
+                        <div key={index} className={styles.sliderCard}>
+                          <span className={styles.dateItem}>
+                            {article.date}
+                          </span>
+                          <h2 className={styles.titleItem}>{article.title}</h2>
+                          <p className={styles.contentItem}>
+                            {article.content}
+                          </p>
+                          <div className={styles.tagsItem}>
+                            {article.tags.map((tag, index) => (
+                              <div key={index} className={styles.tagItem}>
+                                <span className={styles.tagTextItem}>
+                                  {tag}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    </Link>
-                  </SwiperSlide>
-                ))}
+                      </Link>
+                    </SwiperSlide>
+                  ))}
               </Swiper>
             </div>
           </div>
