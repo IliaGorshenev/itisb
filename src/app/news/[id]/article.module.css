@@ -6,6 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 12px;
 }
 
 .commonWrapper {
@@ -84,6 +85,24 @@
 
 .articleTitle {
   font-size: 72px;
+  letter-spacing: 6%;
+  @media (max-width: 1000px) {
+    margin-top: 113px;
+    font-size: 28px;
+    font-weight: 500;
+  }
+  position: relative;
+  @media (max-width: 720px) {
+    &::after {
+      content: " ";
+      height: 2px;
+      width: 100%;
+      background-color: rgba(1, 117, 124, 0.4);
+      position: absolute;
+      left: 0;
+      bottom: -20px;
+    }
+  }
 }
 
 .image {
@@ -94,10 +113,21 @@
   padding: 30px 20px;
   height: 546px;
   overflow: hidden;
+  @media (max-width: 1000px) {
+    height: 225px;
+    box-sizing: border-box;
+    padding: 0;
+  }
+
   & .image {
     width: 100%;
     object-position: center -300px;
     object-fit: cover;
+    @media (max-width: 1000px) {
+      object-fit: cover;
+      object-position: center;
+      height: 225px;
+    }
   }
 }
 
@@ -118,7 +148,10 @@
   display: grid;
   grid-template-columns: 1fr 3fr;
 
-  
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 .route {
   margin-right: auto;
@@ -196,6 +229,8 @@
 
 .tagText {
   color: #fff;
+
+  
 }
 
 .sliderWrapper {
@@ -254,6 +289,11 @@
     border-radius: 12px;
     width: 100%;
     margin: 10px 0;
+    @media (max-width: 1020px) {
+      height: 467px;
+      width: 100%;
+      object-fit: cover;
+    }
   }
 }
 
@@ -268,6 +308,10 @@
   color: #8a969f;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @media (max-width: 520px) {
+    font-size: 14px;
+  }
 }
 
 .dateItem {
@@ -289,14 +333,19 @@
   margin-bottom: 10px;
   font-size: 28px;
   font-weight: 500;
+
+  @media (max-width: 520px) {
+    font-size: 20px;
+  }
 }
 
 .tagsItem {
   display: flex;
   flex-direction: row;
-  column-gap: 8px;
+  gap: 8px;
   z-index: 12;
   margin-top: auto;
+  flex-wrap: wrap;
 }
 
 .tagItem {
@@ -307,6 +356,10 @@
 
 .tagTextItem {
   color: #fff;
+
+  @media (max-width: 520px) {
+    font-size: 14px;
+  }
 }
 
 .sliderHeaderText {
@@ -315,6 +368,10 @@
 
   & span {
     color: #01757c;
+  }
+
+  @media (max-width: 520px) {
+    font-size: 30px;
   }
 }
 
@@ -410,6 +467,11 @@
   box-sizing: border-box;
   border: 1px solid rgba(1, 117, 124, 0.2);
   border-radius: 16px;
+
+  @media (max-width: 520px) {
+    padding: 16px;
+    min-height: 297px;
+  }
 }
 
 .sliderImage {
