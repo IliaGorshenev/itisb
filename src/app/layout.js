@@ -1,10 +1,9 @@
-// src/app/layout.js
 "use client";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import "./globals.css";
 
-import useIsMobile from "./hooks/useIsMobile";
+import useIsMobile from "../hooks/useIsMobile";
 import styles from "./layout.module.css";
 const RootLayout = ({ children }) => {
   const { id } = useParams();

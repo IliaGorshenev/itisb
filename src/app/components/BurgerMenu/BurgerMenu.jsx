@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import useBodyScrollLock from "../../hooks/useBodyScrollLock";
+import useBodyScrollLock from "../../../hooks/useBodyScrollLock";
 import styles from "./BurgerMenu.module.css";
 
 export default function BurgerMenu({ type = "transperent" }) {

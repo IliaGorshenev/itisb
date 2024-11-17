@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import useIsMobile from "../../../hooks/useIsMobile";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import styles from "./About.module.css";
-import useIsMobile from '../../hooks/useIsMobile'
 export const About = () => {
   const handleClick = () => {
     document.getElementById("feedback").scrollIntoView({ behavior: "smooth" });

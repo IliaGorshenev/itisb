@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import useIsMobile from "../../hooks/useIsMobile";
+import useIsMobile from "../../../hooks/useIsMobile";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import styles from "./Header.module.css";
 export const Header = ({ title, route }) => {
