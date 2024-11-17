@@ -8,18 +8,6 @@
 @import "@fontsource/inter/700.css";
 @import "@fontsource/inter/800.css";
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
 :root {
   --green: #01757c;
   --white: #fff;
@@ -75,6 +63,9 @@ body {
   max-width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
+
+  color: black; /* Change to your preferred color */
+  background-color: white; /* Change to your preferred background color */
 }
 
 .no-scroll {
