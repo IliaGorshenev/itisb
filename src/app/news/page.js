@@ -2,11 +2,9 @@
 import Link from "next/link";
 import { Form } from "../components/Form/Form";
 import { Header } from "../components/Header/Header";
+import { articles } from "./const";
 import styles from "./news.module.css";
-import { articles} from './const'
 export default function News() {
- 
-
   return (
     <>
       <Header title={"Новости"} route={"Новости"} />
@@ -14,7 +12,7 @@ export default function News() {
         <div className={styles.newsGrid}>
           {articles.map((article) => (
             <Link key={article.id} href={`/news/${article.id}`}>
-              <div className={styles.articleWrapper} >
+              <div className={styles.articleWrapper}>
                 <span className={styles.date}>{article.date}</span>
                 <h2 className={styles.title}>{article.title}</h2>
                 <p className={styles.content}>{article.content}</p>

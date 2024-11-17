@@ -1,4 +1,3 @@
-// app/articles/[id]/page.jsx
 "use client";
 import classNames from "classnames";
 import Image from "next/image";
@@ -22,7 +21,7 @@ export default function ArticlePage() {
   const [sorted, setSorted] = useState([...articles]);
   useEffect(() => {
     setSorted([...articles.filter((a) => a.id !== article.id)]);
-  }, [id]);
+  }, [id, article]);
   const { id } = useParams();
   const article = articles.find((a) => a.id === parseInt(id));
 
@@ -188,7 +187,7 @@ export default function ArticlePage() {
           <button onClick={handleClick} className={styles.button}>
             оставить заявку по ТП
           </button>
-          <BurgerMenu type="ordinary"/>
+          <BurgerMenu type="ordinary" />
         </header>
 
         <div className={styles.wrapper}>
