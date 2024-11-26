@@ -35,7 +35,7 @@ app.post('/send-email', (req, res) => {
 
   const mailOptions = {
     from: 'info@proitsolutions.ru',
-    to: 'benya.sarkisyan@gmail.com',
+    to: 'support@proitsolutions.ru',
     bcc: 'gorschenyov.ilya2014@yandex.ru',
     subject: 'Заявка',
     text: `Поступила новая заявка с сайта proitsolutions.ru:
