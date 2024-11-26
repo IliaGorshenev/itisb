@@ -183,10 +183,10 @@ export const SolutionsSecondary = () => {
               ></Image>
             </div>
             <div className={styles.tags}>
-              <div className={styles.tag}>
+              <div style={{ backgroundColor: "rgba(1, 117, 124, 0.1)" }} className={styles.tag}>
                 <span className={styles.tagText}>IVA Technologies </span>
               </div>
-              <div className={styles.tag}>
+              <div style={{ backgroundColor: "rgba(1, 117, 124, 0.1)" }} className={styles.tag}>
                 <span className={styles.tagText}>Vinteo</span>
               </div>
             </div>
@@ -226,7 +226,7 @@ export const SolutionsSecondary = () => {
               ></Image>
             </div>
             <div className={styles.tags}>
-              <div className={styles.tag}>
+              <div style={{ backgroundColor: "rgba(1, 117, 124, 0.1)" }} className={styles.tag}>
                 <span className={styles.tagText}>eXpress</span>
               </div>
             </div>
@@ -268,7 +268,7 @@ export const SolutionsSecondary = () => {
               ></Image>
             </div>
             <div className={styles.tags}>
-              <div className={styles.tag}>
+              <div style={{ backgroundColor: "rgba(1, 117, 124, 0.1)" }} className={styles.tag}>
                 <span className={styles.tagText}>Initi</span>
               </div>
             </div>

@@ -1,12 +1,12 @@
-@import "@fontsource/inter/index.css";
-@import "@fontsource/inter/100.css";
-@import "@fontsource/inter/200.css";
-@import "@fontsource/inter/300.css";
-@import "@fontsource/inter/400.css";
-@import "@fontsource/inter/500.css";
-@import "@fontsource/inter/600.css";
-@import "@fontsource/inter/700.css";
-@import "@fontsource/inter/800.css";
+@import '@fontsource/inter/index.css';
+@import '@fontsource/inter/100.css';
+@import '@fontsource/inter/200.css';
+@import '@fontsource/inter/300.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/inter/800.css';
 
 :root {
   --green: #01757c;
@@ -76,13 +76,14 @@ body {
 html {
   padding: 20px;
   scroll-behavior: smooth;
+  background-color: #F7FAFC;
   @media (max-width: 1300px) {
     padding: 0;
   }
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
@@ -105,4 +106,10 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }

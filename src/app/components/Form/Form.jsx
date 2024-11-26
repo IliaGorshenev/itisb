@@ -1,57 +1,74 @@
-"use client";
-import React, { useState } from "react";
-import emailjs from "emailjs-com";
-import styles from "./Form.module.css";
+'use client';
+import axios from 'axios';
+import { useState } from 'react';
+import styles from './Form.module.css';
+import Modal from './Modal';
 
-const sendEmail = (e, formValues) => {
+const sendEmail = async (e, formValues, setResult, setModalOpen, setIsSubmitting) => {
   e.preventDefault();
+  setIsSubmitting(true);
 
-  emailjs
-    .send(
-      "service_z4iv68f",
-      "template_m2d0ah5",
-      formValues,
-      "QzVHfSLYZHzgmLdoh" // Replace with your actual user ID from EmailJS
-    )
-    .then(
-      (result) => {
-        console.log(result.text);
-        alert("Email sent successfully!");
-      },
-      (error) => {
-        console.log(error.text);
-        alert("Failed to send email. Please try again.");
-      }
-    );
+  try {
+    const response = await axios.post('http://localhost:3001/send-email', formValues);
+    setResult({ title: 'Поздравляем', message: 'Сообщение успешно отправлено' });
+  } catch (error) {
+    console.error('Error sending email:', error);
+    setResult({ title: 'Ошибка', message: 'Произошла ошибка' });
+  } finally {
+    setIsSubmitting(false);
+    setModalOpen(true);
+  }
 };
 
-export const Form = ({ type = "first" }) => {
+export const Form = ({ type = 'first' }) => {
   const [formValues, setFormValues] = useState({
-    companyName: "",
-    INN: "",
-    projectName: "",
-    producer: "",
-    email: "",
-    phone: "",
-    comment: ""
+    companyName: '',
+    INN: '',
+    projectName: '',
+    producer: '',
+    email: '',
+    phone: '+7',
+    comment: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [result, setResult] = useState({ title: '', message: '' });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const handleSubmit = (e) => sendEmail(e, formValues);
+  const handleSubmit = (e) => sendEmail(e, formValues, setResult, setModalOpen, setIsSubmitting);
+  const formatPhoneNumber = (number) => {
+    const cleaned = `${number}`.replace(/\D/g, '');
+    let formatted = '+7';
 
+    if (cleaned.length > 1) {
+      formatted += ` (${cleaned.slice(1, 4)}`;
+    }
+    if (cleaned.length > 4) {
+      formatted += `) ${cleaned.slice(4, 7)}`;
+    }
+    if (cleaned.length > 7) {
+      formatted += `-${cleaned.slice(7, 9)}`;
+    }
+    if (cleaned.length > 9) {
+      formatted += `-${cleaned.slice(9, 11)}`;
+    }
+
+    return formatted;
+  };
+  const handlePhoneInput = (e) => {
+    const formattedPhoneNumber = formatPhoneNumber(e.target.value);
+    setFormValues({ ...formValues, phone: formattedPhoneNumber });
+  };
   return (
     <div id="feedback" className={`${styles.wrapper} ${styles[type]}`}>
       <div className={styles.formWrapper}>
-        <h2 className={styles.headerTitle}>
-          Оставьте заявку на техническую поддержку
-        </h2>
+        <h2 className={styles.headerTitle}>Оставьте заявку на техническую поддержку</h2>
         <p className={styles.headerText}>
-          Заполните форму и наши специалисты технической поддержки помогут
-          решить любой ваш вопрос
+          Заполните форму и наши специалисты технической поддержки помогут решить любой ваш вопрос
         </p>
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.row}>
@@ -62,6 +79,7 @@ export const Form = ({ type = "first" }) => {
               name="companyName"
               value={formValues.companyName}
               onChange={handleChange}
+              tabIndex="1"
             />
             <input
               placeholder="ИНН"
@@ -103,8 +121,9 @@ export const Form = ({ type = "first" }) => {
             type="tel"
             className={styles.input}
             name="phone"
-            value={formValues.phone}
-            onChange={handleChange}
+            value={formValues.phone} 
+            onChange={handlePhoneInput}
+            required
           />
           <textarea
             placeholder="Комментарий"
@@ -113,16 +132,10 @@ export const Form = ({ type = "first" }) => {
             value={formValues.comment}
             onChange={handleChange}
           ></textarea>
-          <button type="submit" className={styles.button}>
-            <span>Оставить заявку</span>
+          <button type="submit" className={styles.button} disabled={isSubmitting}>
+            <span>{isSubmitting ? 'Отправка...' : 'Оставить заявку'}</span>
             <div className={styles.circle}>
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M1.56282 14.1871L13.9372 1.81268M13.9372 1.81268H4.03769M13.9372 1.81268V11.7122"
                   stroke="#01757C"
@@ -132,6 +145,7 @@ export const Form = ({ type = "first" }) => {
             </div>
           </button>
         </form>
+        <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} title={result.title} message={result.message} />
       </div>
     </div>
   );

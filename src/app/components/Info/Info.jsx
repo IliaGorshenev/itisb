@@ -1,6 +1,12 @@
 import Image from "next/image";
 import styles from "./Info.module.css";
 export const Info = () => {
+  const handleClick = () => {
+    document.getElementById('feedback').scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+      document.querySelector('[tabIndex="1"]').focus();
+    }, 300);
+  };
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
@@ -50,7 +56,7 @@ export const Info = () => {
           </div>
 
           <div className={styles.footer}>
-            <button className={styles.button}>
+            <button onClick={handleClick} className={styles.button}>
               <svg
                 width="15"
                 height="15"

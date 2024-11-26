@@ -95,7 +95,6 @@
   }
 }
 
-
 .table {
   display: flex;
   flex-direction: column;
@@ -144,7 +143,7 @@
 
   &:hover {
     opacity: 0.8;
-    transition: opacity 0.2s linear;
+    transition: opacity 0.05s linear;
   }
 }
 

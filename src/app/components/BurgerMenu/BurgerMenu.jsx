@@ -1,15 +1,20 @@
-"use client";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import useBodyScrollLock from "../../../hooks/useBodyScrollLock";
-import styles from "./BurgerMenu.module.css";
+'use client';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import useBodyScrollLock from '../../../hooks/useBodyScrollLock';
+import styles from './BurgerMenu.module.css';
 
-export default function BurgerMenu({ type = "transperent" }) {
+export default function BurgerMenu({ type = 'transperent' }) {
   const [isOpen, setIsOpen] = useState(false);
   useBodyScrollLock(!isOpen);
   const handleMenuToggle = () => {
     setIsOpen(!isOpen);
+    if (!isOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
   };
   // useBodyScrollLock(isOpen);
   // useEffect(() => {
@@ -24,42 +29,33 @@ export default function BurgerMenu({ type = "transperent" }) {
         setIsOpen(false);
       }
     };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
   return (
     <>
-      <div
-        className={`${styles.burgerButton} ${styles[type]}`}
-        onClick={handleMenuToggle}
-      >
-        {" "}
+      <div className={`${styles.burgerButton} ${styles[type]}`} onClick={handleMenuToggle}>
+        {' '}
         <motion.div
           className={styles.burgerBar}
           animate={isOpen ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        ></motion.div>{" "}
+          transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+        ></motion.div>{' '}
         <motion.div
           className={styles.burgerBar}
           animate={isOpen ? { rotate: -45, y: -3 } : { rotate: 0, y: 0 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        ></motion.div>{" "}
-      </div>{" "}
+          transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+        ></motion.div>{' '}
+      </div>{' '}
       <motion.div
         className={styles.menu}
-        animate={isOpen ? { x: 0 } : { x: "100%" }}
-        initial={{ x: "100%" }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        animate={isOpen ? { x: 0 } : { x: '100%' }}
+        initial={{ x: '100%' }}
+        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
       >
         <div className={styles.wrapper}>
-          <Link className={styles.logo} href={"/"}>
-            <svg
-              width="186"
-              height="58"
-              viewBox="0 0 186 58"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+          <Link className={styles.logo} href={'/'}>
+            <svg width="186" height="58" viewBox="0 0 186 58" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"
@@ -176,90 +172,40 @@ export default function BurgerMenu({ type = "transperent" }) {
             <li className={styles.linksItem}>
               <Link href="/solutions" className={styles.link}>
                 <span>Решения</span>
-                <svg
-                  width="20"
-                  height="16"
-                  viewBox="0 0 20 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.524658 8L18 8M18 8L11.0098 1M18 8L11.0098 15"
-                    stroke="white"
-                    stroke-width="2"
-                  />
+                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.524658 8L18 8M18 8L11.0098 1M18 8L11.0098 15" stroke="white" stroke-width="2" />
                 </svg>
               </Link>
             </li>
             <li className={styles.linksItem}>
               <Link href="/security" className={styles.link}>
                 <span>Безопасность</span>
-                <svg
-                  width="20"
-                  height="16"
-                  viewBox="0 0 20 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.524658 8L18 8M18 8L11.0098 1M18 8L11.0098 15"
-                    stroke="white"
-                    stroke-width="2"
-                  />
+                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.524658 8L18 8M18 8L11.0098 1M18 8L11.0098 15" stroke="white" stroke-width="2" />
                 </svg>
               </Link>
             </li>
             <li className={styles.linksItem}>
               <Link href="/partners" className={styles.link}>
                 <span>Партнеры</span>
-                <svg
-                  width="20"
-                  height="16"
-                  viewBox="0 0 20 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.524658 8L18 8M18 8L11.0098 1M18 8L11.0098 15"
-                    stroke="white"
-                    stroke-width="2"
-                  />
+                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.524658 8L18 8M18 8L11.0098 1M18 8L11.0098 15" stroke="white" stroke-width="2" />
                 </svg>
               </Link>
             </li>
             <li className={styles.linksItem}>
               <Link href="/news" className={styles.link}>
                 <span>Новости</span>
-                <svg
-                  width="20"
-                  height="16"
-                  viewBox="0 0 20 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.524658 8L18 8M18 8L11.0098 1M18 8L11.0098 15"
-                    stroke="white"
-                    stroke-width="2"
-                  />
+                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.524658 8L18 8M18 8L11.0098 1M18 8L11.0098 15" stroke="white" stroke-width="2" />
                 </svg>
               </Link>
             </li>
             <li className={styles.linksItem}>
               <Link href="/contacts" className={styles.link}>
                 <span>Контакты</span>
-                <svg
-                  width="20"
-                  height="16"
-                  viewBox="0 0 20 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.524658 8L18 8M18 8L11.0098 1M18 8L11.0098 15"
-                    stroke="white"
-                    stroke-width="2"
-                  />
+                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.524658 8L18 8M18 8L11.0098 1M18 8L11.0098 15" stroke="white" stroke-width="2" />
                 </svg>
               </Link>
             </li>

@@ -7,8 +7,8 @@ export default async (req, res) => {
     // Create a transporter object using Yandex's SMTP server
     const transporter = nodemailer.createTransport({
       host: 'smtp.yandex.ru',
-      port: 465, // or 587 if TLS is preferred
-      secure: true, // true for port 465, false for port 587
+      port: 465, // Secure port for SMTP
+      secure: true, // true for port 465
       auth: {
         user: 'gorshenev2@yandex.ru', // your Yandex email address
         pass: '2014229152002Test',  // your Yandex email password
@@ -18,7 +18,7 @@ export default async (req, res) => {
     // Setup email data
     const mailOptions = {
       from: 'gorshenev2@yandex.ru',
-      to: 'gorschnyov.ilya2014@yandex.ru',
+      to: 'gorschnyov.ilya2014@yandex.ru', // replace with the recipient's email
       subject: 'New Support Request',
       html: `
         <p>Company Name: ${companyName}</p>

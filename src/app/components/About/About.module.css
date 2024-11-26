@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-image: url("../../../../public/about-image.jpg");
+  background-image: url('../../../../public/about-image.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
@@ -34,7 +34,7 @@
 
   &:hover {
     opacity: 0.8;
-    transition: opacity 0.2s linear;
+    transition: opacity 0.05s linear;
   }
 }
 
@@ -117,7 +117,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 16px;
-
+  
   @media (max-width: 520px) {
     width: 100%;
   }
@@ -133,7 +133,7 @@
 
   &:hover {
     opacity: 0.8;
-    transition: opacity 0.2s linear;
+    transition: opacity 0.05s linear;
   }
 
   flex-direction: row;
@@ -141,6 +141,12 @@
   justify-content: flex-start;
   gap: 16px;
   border-radius: 80px;
+
+  @media (max-width: 520px) {
+    gap: 8px;
+    padding: 6px 2px;
+    padding-right: 8px;
+  }
 
   & span {
     font-weight: 600;
@@ -155,7 +161,7 @@
     }
   }
   & .circle {
-    width: 48px;
+    min-width: 48px;
     height: 48px;
     display: flex;
     background-color: #01757c;
@@ -219,6 +225,12 @@
   background-color: var(--green);
   border-radius: 80px;
   width: fit-content;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+    transition: opacity 0.05s linear;
+  }
 }
 
 @keyframes scroll-left {

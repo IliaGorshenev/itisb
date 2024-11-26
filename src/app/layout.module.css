@@ -35,7 +35,7 @@
   border-radius: 20px;
   min-height: 579px;
 
-  background-image: url("../../public/footer-image.jpg");
+  background-image: url('../../public/footer-image.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   @media (max-width: 1300px) {
@@ -177,7 +177,7 @@
 
   &:hover {
     opacity: 0.8;
-    transition: opacity 0.2s linear;
+    transition: opacity 0.05s linear;
   }
 }
 

@@ -76,6 +76,12 @@
     overflow: hidden;
     border-radius: 0;
     padding: 40px 20px;
+    row-gap: 64px;
+  }
+
+  @media (max-width:  700px) {
+   
+    row-gap: 18px;
   }
 }
 
@@ -87,14 +93,14 @@
   font-size: 72px;
   letter-spacing: 6%;
   @media (max-width: 1000px) {
-    margin-top: 113px;
+    margin-top: 73px;
     font-size: 28px;
     font-weight: 500;
   }
   position: relative;
   @media (max-width: 720px) {
     &::after {
-      content: " ";
+      content: ' ';
       height: 2px;
       width: 100%;
       background-color: rgba(1, 117, 124, 0.4);
@@ -132,7 +138,7 @@
 }
 
 .articleBlock::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   width: 100%;
@@ -229,8 +235,6 @@
 
 .tagText {
   color: #fff;
-
-  
 }
 
 .sliderWrapper {
@@ -253,6 +257,11 @@
 
   @media (max-width: 1020px) {
     padding-bottom: 94px;
+  }
+
+  @media (max-width:  700px) {
+    padding-top: 8px;
+    row-gap: 18px;
   }
 }
 
@@ -295,6 +304,11 @@
       object-fit: cover;
     }
   }
+
+  @media (max-width: 1020px) {
+    
+    padding-right: 0;
+  }
 }
 
 .contentItem {
@@ -333,6 +347,8 @@
   margin-bottom: 10px;
   font-size: 28px;
   font-weight: 500;
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
 
   @media (max-width: 520px) {
     font-size: 20px;
@@ -410,7 +426,7 @@
 
   &:hover {
     opacity: 0.8;
-    transition: opacity 0.2s linear;
+    transition: opacity 0.05s linear;
   }
   & > svg {
     position: absolute;
@@ -429,13 +445,13 @@
   column-gap: 12px;
   position: absolute;
   right: 0;
-  top: 80px;
+  top: 40px;
   transform: translateX(-50%);
   width: 156px;
   @media (max-width: 1020px) {
-    bottom: 10px;
+    bottom: 00px;
     top: auto;
-    left: 20px;
+    right: 60px;
     transform: translateX(0%);
   }
 }

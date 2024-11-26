@@ -221,7 +221,7 @@ export default function ArticlePage() {
             ></Image>
           </div>
           <div className={styles.articleContent}>
-            <div>
+            <div style={{display: 'flex', columnGap: '6px'}}>
               <svg
                 width="48"
                 height="48"

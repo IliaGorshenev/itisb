@@ -10,7 +10,7 @@
   border-radius: 20px;
   position: relative;
   row-gap: 48px;
-  
+
   @media (max-width: 1300px) {
     overflow: hidden;
     border-radius: 0;
@@ -88,10 +88,9 @@
   position: relative;
   cursor: pointer;
 
-
   &:hover {
     opacity: 0.8;
-    transition: opacity 0.2s linear; 
+    transition: opacity 0.05s linear;
   }
   & > svg {
     position: absolute;
