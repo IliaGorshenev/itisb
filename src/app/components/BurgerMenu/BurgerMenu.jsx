@@ -2,12 +2,29 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import useBodyScrollLock from '../../../hooks/useBodyScrollLock';
+import { useRouter } from 'next/navigation';
 import styles from './BurgerMenu.module.css';
 
 export default function BurgerMenu({ type = 'transperent' }) {
   const [isOpen, setIsOpen] = useState(false);
-  useBodyScrollLock(!isOpen);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    setIsOpen(false)
+    document.body.classList.remove('no-scroll');
+  }, [router]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1300) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const handleMenuToggle = () => {
     setIsOpen(!isOpen);
     if (!isOpen) {
@@ -22,7 +39,7 @@ export default function BurgerMenu({ type = 'transperent' }) {
   //     document.body.style.overflow = isOpen ? "hidden" : "auto";
   //   }
   // }, [isOpen]);
-  !isOpen;
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1300) {
