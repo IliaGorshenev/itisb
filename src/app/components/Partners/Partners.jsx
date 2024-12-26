@@ -4,7 +4,6 @@ import SwiperCore from "swiper";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import DirectumLogo from "../../../../public/directum.png";
 import IVATechnologiesLogo from "../../../../public/iva.png";
 import KasperskyLogo from "../../../../public/kaspersky.png";
 import styles from "./Partners.module.css";
@@ -27,14 +26,6 @@ const partnersData = [
     widht: 82,
   },
   {
-    title: "Directum",
-    description:
-      "Cистема управления цифровыми процессами и документами с элементами искусственного интеллекта, в основе которых лежат технологии машинного обучения и компьютерного зрения.",
-    image: DirectumLogo,
-    height: 49,
-    widht: 191,
-  },
-  {
     title: "Лаборатория Касперского",
     description:
       "Международная компания, специализирующаяся на разработке систем защиты от компьютерных вирусов, спама, хакерских атак и прочих киберугроз.",
@@ -49,14 +40,6 @@ const partnersData = [
     image: IVATechnologiesLogo,
     height: 59,
     widht: 82,
-  },
-  {
-    title: "Directum",
-    description:
-      "Cистема управления цифровыми процессами и документами с элементами искусственного интеллекта, в основе которых лежат технологии машинного обучения и компьютерного зрения.",
-    image: DirectumLogo,
-    height: 49,
-    widht: 191,
   },
 ];
 export const Partners = () => {

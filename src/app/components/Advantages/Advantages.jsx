@@ -162,9 +162,9 @@ export const Advantages = () => {
       </div>
       <div className={styles.advantagesWrapper}>
         <div className={styles.row}>
-          <div className={styles.item}>Поставка и импортозамещение ПО и ТП</div>
+          <div className={styles.item}>Поставка ПО и техническая поддержка          </div>
           <div className={styles.item}>
-            Поставка и импортозамещение оборудования и ТП
+            Поставка оборудования и импортозамещение
           </div>
         </div>
         <div className={styles.row}>

@@ -19,6 +19,15 @@
   max-width: 500px;
 }
 
+.closeButton {
+  float: right;
+  border: none;
+  background: none;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 .modalTitle {
   margin-bottom: 10px;
   font-size: 24px;
@@ -32,13 +41,13 @@
 
 .modalButton {
   padding: 10px 20px;
-  background: #01757C;
+  background: #01757c;
   color: white;
   box-sizing: border-box;
   border: none;
   border-radius: 24px;
   cursor: pointer;
-  
+
   & span {
     font-weight: 600;
     font-size: 16px;
@@ -50,5 +59,29 @@
     @media (max-width: 520px) {
       font-size: 14px;
     }
+  }
+}
+
+
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 24px;
+  border: none;
+  font-size: 20px;
+  letter-spacing: 4%;
+  color: #232323;
+  outline: none;
+  background-color: #f8fafc;
+  border-radius: 100%;
+  margin-top: 5px;
+  border-radius: 8px;
+  resize: none;
+
+  &::placeholder {
+    font-size: 20px;
+    letter-spacing: 4%;
+    color: #bec4c8;
   }
 }

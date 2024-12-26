@@ -66,7 +66,7 @@ export const Form = ({ type = 'first' }) => {
   return (
     <div id="feedback" className={`${styles.wrapper} ${styles[type]}`}>
       <div className={styles.formWrapper}>
-        <h2 className={styles.headerTitle}>Оставьте заявку на техническую поддержку</h2>
+        <h2 className={styles.headerTitle}>Свяжитесь с нами</h2>
         <p className={styles.headerText}>
           Заполните форму и наши специалисты технической поддержки помогут решить любой ваш вопрос
         </p>

@@ -2,7 +2,7 @@
   max-width: 1830px;
   width: 100%;
   margin: 0 auto;
-  padding: 80px 48px;
+  padding: 80px 118px;
   min-height: 796px;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
   position: relative;
   row-gap: 48px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 2fr;
 
   background-repeat: no-repeat;
   background-size: cover;

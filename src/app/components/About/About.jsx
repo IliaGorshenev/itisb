@@ -1,9 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import useIsMobile from '../../../hooks/useIsMobile';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import Modal from '../Form/Modal';
 import styles from './About.module.css';
 export const About = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleClick = () => {
     document.getElementById('feedback').scrollIntoView({ behavior: 'smooth' });
     setTimeout(() => {
@@ -11,8 +15,12 @@ export const About = () => {
     }, 300);
   };
 
+  const handleClickTP = () => {
+    setIsModalOpen(true);
+  };
+
   const isMobile = useIsMobile();
-  
+
   return (
     <>
       <div className={styles.wrapper}>
@@ -38,10 +46,7 @@ export const About = () => {
                   d="M17.7075 0L0 6.91497C0.897501 24.1752 6.14837 30.7355 17.7075 38V0ZM17.7075 2.19729L2.19726 8.26552C2.98339 23.4123 7.58269 29.1693 17.7075 35.5442V2.19729Z"
                   fill="white"
                 />
-                <path
-                  d="M3.48987 9.04058L17.7076 3.48979V33.9932C8.42651 28.1618 4.21049 22.8957 3.48987 9.04058Z"
-                  fill="white"
-                />
+                <path d="M3.48987 9.04058L17.7076 3.48979V33.9932C8.42651 28.1618 4.21049 22.8957 3.48987 9.04058Z" fill="white" />
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -151,10 +156,7 @@ export const About = () => {
                   d="M27.0003 0L0 10.5439C1.36851 36.8622 9.375 46.8653 27.0003 57.9422V0ZM27.0003 3.35041L3.35037 12.6032C4.54906 35.6989 11.5621 44.4771 27.0003 54.1977V3.35041Z"
                   fill="white"
                 />
-                <path
-                  d="M5.32118 13.785L27.0002 5.32123V51.8327C12.8486 42.941 6.41998 34.9113 5.32118 13.785Z"
-                  fill="white"
-                />
+                <path d="M5.32118 13.785L27.0002 5.32123V51.8327C12.8486 42.941 6.41998 34.9113 5.32118 13.785Z" fill="white" />
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -276,7 +278,7 @@ export const About = () => {
             </ul>
           </nav>
 
-          <button onClick={handleClick} className={styles.button}>
+          <button onClick={handleClickTP} className={styles.button}>
             оставить заявку по ТП
           </button>
           <BurgerMenu />
@@ -313,8 +315,8 @@ export const About = () => {
               )}
             </h1>
             <p className={styles.text}>
-              Наша компания специализируется на ИТ-решениях и системах безопасности. Мы являемся официальными партнерами
-              ведущих вендоров и предоставляем продукты собственной разработки
+              Наша компания специализируется на ИТ-решениях и системах безопасности. Мы являемся официальными партнерами ведущих вендоров и
+              предоставляем продукты собственной разработки
             </p>
             <div className={styles.buttonWrapper}>
               {!isMobile && <Image width={'34'} height={'20'} src="/russia.png"></Image>}
@@ -322,11 +324,7 @@ export const About = () => {
                 <span> приступить к импортозамещению</span>
                 <div className={styles.circle}>
                   <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M1.56282 13.8532L13.9372 1.47885M13.9372 1.47885H4.03769M13.9372 1.47885V11.3783"
-                      stroke="white"
-                      stroke-width="2"
-                    />
+                    <path d="M1.56282 13.8532L13.9372 1.47885M13.9372 1.47885H4.03769M13.9372 1.47885V11.3783" stroke="white" stroke-width="2" />
                   </svg>
                 </div>
               </button>
@@ -350,6 +348,13 @@ export const About = () => {
           </div>
         )}
       </div>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        notification={false}
+        title={'Оставьте заявку на техническую поддержку'}
+        message={'Наши специалисты помогут Вам решить все возникшие вопросы'}
+      />
     </>
   );
 };

@@ -1,8 +1,6 @@
 import Image from "next/image";
-import DirectumLogo from "../../../../public/directum.png";
 import IVATechnologiesLogo from "../../../../public/iva.png";
 import KasperskyLogo from "../../../../public/kaspersky.png";
-import Naumen from "../../../../public/naumen.png";
 import ntech from "../../../../public/ntech.png";
 import psql from "../../../../public/psql.png";
 import p7 from "../../../../public/p7.png";
@@ -35,22 +33,6 @@ const partnersData = [
     image: IVATechnologiesLogo,
     height: 59,
     width: 82,
-  },
-  {
-    title: "Directum",
-    description:
-      "Cистема управления цифровыми процессами и документами с элементами искусственного интеллекта, в основе которых лежат технологии машинного обучения и компьютерного зрения.",
-    image: DirectumLogo,
-    height: 49,
-    width: 191,
-  },
-  {
-    title: "Naumen",
-    description:
-      "Российский вендор корпоративного ПО и облачных сервисов, технологический партнер в цифровой трансформации для компаний и органов власти",
-    image: Naumen,
-    height: 14,
-    width: 125,
   },
   {
     title: "SimpleOne",
