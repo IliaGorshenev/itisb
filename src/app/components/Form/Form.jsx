@@ -20,6 +20,7 @@ const sendEmail = async (e, formValues, setResult, setModalOpen, setIsSubmitting
   }
 };
 
+
 export const Form = ({ type = 'first' }) => {
   const [formValues, setFormValues] = useState({
     companyName: '',
