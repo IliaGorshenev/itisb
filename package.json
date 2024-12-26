@@ -11,6 +11,7 @@
     "@fontsource/inter": "^5.1.0",
     "@react-email/render": "^1.0.2",
     "@types/dompurify": "^3.0.5",
+    "axios": "^1.7.9",
     "classnames": "^2.5.1",
     "cors": "^2.8.5",
     "dompurify": "^3.1.7",
