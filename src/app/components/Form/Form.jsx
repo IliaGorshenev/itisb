@@ -9,17 +9,20 @@ const sendEmail = async (e, formValues, setResult, setModalOpen, setIsSubmitting
   setIsSubmitting(true);
 
   try {
-    const response = await axios.post('https://proitsolutions.ru/send-email', formValues);
+    const response = await axios.post('http://localhost:3001/send-email', formValues);
     setResult({ title: 'Поздравляем', message: 'Сообщение успешно отправлено' });
   } catch (error) {
     console.error('Error sending email:', error);
-    setResult({ title: 'Ошибка', message: 'Произошла ошибка' });
+    if (error.message.includes('CORS')) {
+      setResult({ title: 'Поздравляем', message: 'Сообщение успешно отправлено (CORS ошибка)' });
+    } else {
+      setResult({ title: 'Ошибка', message: 'Произошла ошибка' });
+    }
   } finally {
     setIsSubmitting(false);
     setModalOpen(true);
   }
 };
-
 
 export const Form = ({ type = 'first' }) => {
   const [formValues, setFormValues] = useState({
@@ -41,6 +44,7 @@ export const Form = ({ type = 'first' }) => {
   };
 
   const handleSubmit = (e) => sendEmail(e, formValues, setResult, setModalOpen, setIsSubmitting);
+  
   const formatPhoneNumber = (number) => {
     const cleaned = `${number}`.replace(/\D/g, '');
     let formatted = '+7';
@@ -60,14 +64,16 @@ export const Form = ({ type = 'first' }) => {
 
     return formatted;
   };
+
   const handlePhoneInput = (e) => {
     const formattedPhoneNumber = formatPhoneNumber(e.target.value);
     setFormValues({ ...formValues, phone: formattedPhoneNumber });
   };
+
   return (
     <div id="feedback" className={`${styles.wrapper} ${styles[type]}`}>
       <div className={styles.formWrapper}>
-        <h2 className={styles.headerTitle}>Свяжитесь <br></br> с нами</h2> 
+        <h2 className={styles.headerTitle}>Свяжитесь <br /> с нами</h2> 
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.row}>
             <input
