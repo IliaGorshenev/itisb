@@ -9,7 +9,7 @@ const sendEmail = async (e, formValues, setResult, setModalOpen, setIsSubmitting
   setIsSubmitting(true);
 
   try {
-    const response = await axios.post('http://localhost:3001/send-email', formValues);
+    const response = await axios.post('https://proitsolutions.ru/send-email', formValues);
     setResult({ title: 'Поздравляем', message: 'Сообщение успешно отправлено' });
   } catch (error) {
     console.error('Error sending email:', error);
@@ -67,10 +67,7 @@ export const Form = ({ type = 'first' }) => {
   return (
     <div id="feedback" className={`${styles.wrapper} ${styles[type]}`}>
       <div className={styles.formWrapper}>
-        <h2 className={styles.headerTitle}>Свяжитесь с нами</h2>
-        <p className={styles.headerText}>
-          Заполните форму и наши специалисты технической поддержки помогут решить любой ваш вопрос
-        </p>
+        <h2 className={styles.headerTitle}>Свяжитесь <br></br> с нами</h2> 
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.row}>
             <input

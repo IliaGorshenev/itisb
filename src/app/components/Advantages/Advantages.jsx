@@ -173,7 +173,7 @@ export const Advantages = () => {
         </div>
         <div className={styles.row}>
           <div className={styles.item}>Искусственный интеллект</div>
-          <div className={styles.item}>Роботизация систем</div>
+          <div className={styles.item}>Роботизация и автоматизация систем</div>
         </div>
         <div className={styles.row}>
           <div className={styles.item}>
