@@ -9,7 +9,7 @@ const sendEmail = async (e, formValues, setResult, setModalOpen, setIsSubmitting
   setIsSubmitting(true);
 
   try {
-    const response = await axios.post('https://proitsolutions.ru/send-email', formValues);
+    const response = await axios.post('http://localhost:3001/send-email', formValues);
     setResult({ title: 'Поздравляем', message: 'Сообщение успешно отправлено' });
   } catch (error) {
     console.error('Error sending email:', error);
