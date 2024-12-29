@@ -82,7 +82,7 @@
 
 .shield {
   width: 100%;
-  max-width: 100%;
+  max-width: 920px;
   height: auto;
   max-height: 100%;
   animation: shieldRotate3D 10s ease-in-out infinite;
@@ -98,12 +98,12 @@
     position: absolute;
     right: -160px;
     bottom: -180px;
-    width: 708px;
+    width: 920px;
     height: 708px;
   }
   @media (max-width: 1000px) {
-    right: -180px;
-    bottom: -210px;
+    right: -230px;
+    bottom: -150px;
   }
 }
 
