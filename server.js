@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const corsOptions = {
-  origin: 'http://localhost:3001', // Replace with your frontend's URL
+  origin: 'https://proitsolutions.ru', // Replace with your frontend's URL
   methods: ['POST', 'GET', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
   credentials: true,
