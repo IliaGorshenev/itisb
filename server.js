@@ -5,11 +5,11 @@ const cors = require('cors');
 
 const app = express();
 const port = 3001;
+
 app.use(bodyParser.json());
-app.use(cors());
 
 const corsOptions = {
-  origin: '*', // Replace with your frontend's URL
+  origin: '*', // Allow requests from any origin
   methods: ['POST', 'GET', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
   credentials: true,
