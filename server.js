@@ -29,7 +29,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-app.post('/send-email', (req, res) => {
+app.post('/send_email', (req, res) => {
   console.log('POST /send-email called');
   console.log('Request body:', req.body);
 
