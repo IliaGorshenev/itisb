@@ -13,7 +13,8 @@ const sendEmail = async (e, formValues, setResult, setModalOpen, setIsSubmitting
     setResult({ title: 'Поздравляем', message: 'Сообщение успешно отправлено' });
   } catch (error) {
     console.error('Error sending email:', error);
-    if (error.message.includes('CORS')) {
+    // Check for CORS error
+    if (error.response && error.response.status === 0 && error.message === 'Network Error') {
       setResult({ title: 'Поздравляем', message: 'Сообщение успешно отправлено (CORS ошибка)' });
     } else {
       setResult({ title: 'Ошибка', message: 'Произошла ошибка' });
