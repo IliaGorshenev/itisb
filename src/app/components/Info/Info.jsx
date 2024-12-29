@@ -41,7 +41,7 @@ export const Info = () => {
               </div>
               <div className={styles.tableItem}>
                 <p className={styles.tableTitle}>телефон СБ</p>
-                <span className={styles.tableText}>+7 (980) 496‑17‑87</span>
+                <span className={styles.tableText}>+7 (980) 496‑17‑87</span>
               </div>
             </div>
             <div className={styles.row}>

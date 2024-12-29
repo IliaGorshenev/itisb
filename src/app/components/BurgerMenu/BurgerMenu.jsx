@@ -231,11 +231,11 @@ export default function BurgerMenu({ type = 'transperent' }) {
             <div className={styles.phoneWrapper}>
               <div>
                 Телефон ИТ <br></br>
-                +7 (980) 496‑17‑87
+                +7 (980) 496‑17‑87
               </div>
               <div className={styles.phoneWrapperInner}>
                 Телефон СБ<br></br>
-                +7 (980) 496‑17‑87
+                +7 (980) 496‑17‑87
               </div>
             </div>
             <div className={styles.mail}>

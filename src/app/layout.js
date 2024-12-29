@@ -296,11 +296,11 @@ const RootLayout = ({ children }) => {
                 <div className={styles.contactsItems}>
                   <div className={styles.phoneWrapper}>
                     Телефон ИТ <br></br>
-                    +7 (941) 344-23-36
+                    +7 (980) 496‑17‑87
                   </div>
                   <div className={styles.phoneWrapperSecond}>
                     Телефон СБ<br></br>
-                    +7 (941) 344-23-36
+                    +7 (980) 496‑17‑87
                   </div>
                   <div className={styles.mail}>
                     Почта<br></br>
