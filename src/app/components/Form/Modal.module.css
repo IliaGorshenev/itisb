@@ -32,11 +32,13 @@
   margin-bottom: 10px;
   font-size: 24px;
   font-weight: bold;
+  text-align: left;
 }
 
 .modalMessage {
   margin-bottom: 40px;
   font-size: 18px;
+  text-align: left;
 }
 
 .modalButton {

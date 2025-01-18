@@ -320,7 +320,7 @@ export const About = () => {
             </p>
             <div className={styles.buttonWrapper}>
               {!isMobile && <Image width={'34'} height={'20'} src="/russia.png"></Image>}
-              <button style={{ zIndex: '3' }} onClick={handleClick} className={styles.buttonSecondary}>
+              <button  onClick={handleClick} className={styles.buttonSecondary}>
                 <span> приступить к импортозамещению</span>
                 <div className={styles.circle}>
                   <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">

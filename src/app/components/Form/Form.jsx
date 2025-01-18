@@ -74,7 +74,7 @@ export const Form = ({ type = 'first' }) => {
   return (
     <div id="feedback" className={`${styles.wrapper} ${styles[type]}`}>
       <div className={styles.formWrapper}>
-        <h2 className={styles.headerTitle}>Свяжитесь <br /> с нами</h2> 
+        <h2 className={styles.headerTitle}>Свяжитесь с нами</h2> 
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.row}>
             <input

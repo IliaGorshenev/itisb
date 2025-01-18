@@ -138,11 +138,13 @@
   border-radius: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
+  top: 29%;
+  left: 40%;
   z-index: 10;
   background-color: rgba(255, 255, 255, 0.1);
 
+  animation: rotate3D 5s ease-in-out infinite;
+  
   @media (max-width: 1700px) {
     width: 18%;
   }
@@ -157,6 +159,18 @@
   60% { transform: rotate(0deg); }
   80% { transform: rotate(360deg); }
   100% { transform: rotate(0deg); }
+}
+
+@keyframes rotate3D {
+  0% {
+    transform: perspective(600px) rotateY(0deg) rotateX(0deg);
+  }
+  50% {
+    transform: perspective(500px) rotateY(60deg) rotateX(30deg);
+  }
+  100% {
+    transform: perspective(600px) rotateY(0deg) rotateX(0deg);
+  }
 }
 
 .icon {
@@ -183,6 +197,7 @@
   border-right: 1.5px solid rgba(255, 255, 255, 0.5);
   border-radius: 16px;
 
+ 
   font-size: 28px;
   font-weight: 500;
 
